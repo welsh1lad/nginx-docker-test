@@ -1,0 +1,29 @@
+{
+  "apiVersion": "v1",
+  "kind": "BuildConfig",
+  "metadata": {
+    "name": "chained-builds-app1"
+  },
+  "spec": {
+    "output": {
+      "to": {
+        "kind": "ImageStreamTag",
+        "name": "nginx-test:latest"
+      }
+    },
+    "source": {
+      "git": {
+        "uri": "https://github.com/welsh1lad/nginx-docker-test.git"
+      },
+      "type": "Git"
+    },
+    "strategy": {
+      "type": "Docker"
+    },
+    "triggers": [
+      {
+        "type": "ImageChange"
+      }
+    ]
+  }
+}
