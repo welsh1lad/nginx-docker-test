@@ -1,10 +1,19 @@
 pipeline {
-    agent { dockerfile true }
+    agent any 
     stages {
-        stage('Test') {
+        stage('Build') { 
             steps {
-                docker run -d -p8080:80 nginx:v2
-                
+                // 
+            }
+        }
+        stage('Test') { 
+            steps {
+                // 
+            }
+        }
+        stage('Deploy') { 
+            steps {
+                // 
             }
         }
     }
