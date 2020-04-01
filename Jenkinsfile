@@ -40,7 +40,7 @@ pipeline {
         
       stage('Test Running Container') {
          steps{
-            sh 'curl -v http://localhost:8090 | grep "200 OK"'
+            sh 'curl http://localhost:8090'
             }
       }
             
