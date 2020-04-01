@@ -4,20 +4,21 @@ pipeline {
         skipStagesAfterUnstable()
     }
     stages {
-        stage('Build') { 
+        stage('build') { 
             steps { 
-                sh 'make' 
+                sh 'cd /home/vagrant/builds'
+                sh 'git clone https://github.com/welsh1lad/nginx-docker-test.git'
             }
         }
-        stage('Test'){
-            steps {
-                sh 'make check'
-                junit 'reports/**/*.xml' 
-            }
+      stage('Docker Build') {
+      agent any
+      steps {
+        sh 'docker build -t nginx/my-www:latest .'
+          }
         }
         stage('Deploy') {
             steps {
-                sh 'make publish'
+                sh 'echo ... deploy ...'
             }
         }
     }
