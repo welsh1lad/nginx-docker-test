@@ -3,6 +3,15 @@ pipeline {
     options {
         skipStagesAfterUnstable()
     }
+    stage('Pre-Clean Up') {
+      agent any
+      steps {
+        sh 'docker stop my-ww1'
+        sh 'docker rmi nginx/my-www'  
+        sh 'docker rmi -f var/lib/jenkins/workspace/nginx-www_master/nginx-docker-test'
+            }
+        }  
+    
     stages {
         stage('build') { 
             steps { 
