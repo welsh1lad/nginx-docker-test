@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('build') { 
             steps { 
-                sh 'cd /home/vagrant/builds'
+                
                 sh 'git clone https://github.com/welsh1lad/nginx-docker-test.git'
             }
         }
