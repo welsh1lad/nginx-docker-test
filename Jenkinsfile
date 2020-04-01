@@ -1,6 +1,7 @@
 pipeline { 
-    agent any 
+   
     stages 
+    agent any
        stage('build') { 
         steps {  
                sh 'git clone https://github.com/welsh1lad/nginx-docker-test.git'
