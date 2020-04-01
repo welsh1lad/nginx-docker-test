@@ -1,9 +1,21 @@
 pipeline { 
      agent any
-     options {
-        skipStagesAfterUnstable()
-    }
+   //  options {
+   //     skipStagesAfterUnstable()
+   // }
    stages {
+        
+      stage('Clean Up') {
+      agent any
+      steps {
+        sh 'set +e'   
+        sh 'docker stop my-ww1'
+        sh 'docker rmi nginx/my-www'  
+        sh 'docker rmi -f var/lib/jenkins/workspace/nginx-www_master/nginx-docker-test'
+        sh 'set -e'
+           }
+        }  
+        
        stage('build') { 
         steps {  
                sh 'git clone https://github.com/welsh1lad/nginx-docker-test.git'
