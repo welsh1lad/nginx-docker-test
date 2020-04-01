@@ -1,14 +1,10 @@
 pipeline { 
     agent any 
-    //options {
-    //skipStagesAfterUnstable()
-    //}
     stages 
-        stage('build') { 
-            steps { 
-                
-                sh 'git clone https://github.com/welsh1lad/nginx-docker-test.git'
-            }
+       stage('build') { 
+        steps {  
+               sh 'git clone https://github.com/welsh1lad/nginx-docker-test.git'
+              }
         }
 
       stage('Docker Build') {
@@ -34,6 +30,4 @@ pipeline {
         sh 'docker rmi -f var/lib/jenkins/workspace/nginx-www_master/nginx-docker-test'
             }
         }  
-              
-    
 }
