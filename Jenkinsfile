@@ -1,4 +1,5 @@
-node('docker') {
+pipeline {
+    agent any {
  
     stage 'Check-repo'
         sh "git clone https://github.com/welsh1lad/nginx-docker-test.git"
@@ -13,4 +14,5 @@ node('docker') {
     stage 'Test'
      sh "curl -s http://localhost:8090 | grep Welcome | head -n1" 
      
+}
 }
