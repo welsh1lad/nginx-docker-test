@@ -11,7 +11,8 @@ pipeline {
           
         sh 'docker stop my-ww1 | echo "Ignore Error if container is not running"'
         sh 'docker rm my-www1 | echo "Ignore Error if contain is not found"'
-        sh 'docker rmi nginx/my-www:latest | echo "Ignore Error if Image is not there"'  
+        sh 'docker rmi nginx/my-www:latest | echo "Ignore Error if Image is not there"' 
+        sh 'rm -rf /var/lib/jenkins/workspace/nginx-www_master/nginx-docker-test | echo "ignore"' 
         sh ' rm -rf /root/nginx-docker-test | echo " Ignore error"'
         
            }
