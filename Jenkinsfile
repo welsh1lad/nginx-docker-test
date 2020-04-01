@@ -10,7 +10,7 @@ pipeline {
       steps {
           
         sh 'docker stop my-ww1 | echo "Ignore Error if container is not running"'
-        sh 'docker rmi nginx/my-www | echo "Ignore Error if Image is not there"'  
+        sh 'docker rmi nginx/my-www:latest | echo "Ignore Error if Image is not there"'  
         sh 'rm -f /var/lib/jenkins/workspace/nginx-www_master | echo "remove workspace"'
         
            }
