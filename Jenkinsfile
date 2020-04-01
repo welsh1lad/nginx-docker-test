@@ -25,12 +25,10 @@ pipeline {
         }
         
       stage('Health Check') {
-      steps {
         def testResult =  'curl -vv http://localhost:8090'
         if (testResult == 'Failed') {
                           error "test failed"
                           }
-            }
           }
           
       stage('Clean Up') {
