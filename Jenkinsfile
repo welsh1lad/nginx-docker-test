@@ -11,7 +11,7 @@ pipeline {
           
         sh 'docker stop my-ww1 | echo "Ignore Error if container is not running"'
         sh 'docker rmi nginx/my-www | echo "Ignore Error if Image is not there"'  
-        sh 'rmi -f var/lib/jenkins/workspace/nginx-www_master/nginx-docker-test | echo "remove workspace"'
+        sh 'rm -f var/lib/jenkins/workspace/nginx-www_master/nginx-docker-test | echo "remove workspace"'
         
            }
         }  
