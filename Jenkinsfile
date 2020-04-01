@@ -24,7 +24,7 @@ pipeline {
             }
         }
         
-      Stage('Health Check') {
+      stage('Health Check') {
       steps {
         def testResult =  'curl -vv http://localhost:8090'
         if (testResult == 'Failed') {
@@ -33,7 +33,7 @@ pipeline {
             }
           }
           
-      Stage('Clean Up') {
+      stage('Clean Up') {
       agent any
       steps {
         sh 'docker stop my-ww1'
