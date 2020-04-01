@@ -1,8 +1,8 @@
 pipeline { 
     agent any 
-    options {
-        //skipStagesAfterUnstable()
-    }
+    //options {
+    //skipStagesAfterUnstable()
+    //}
     stages {
       stage('Pre-Clean Up') {
       agent any
