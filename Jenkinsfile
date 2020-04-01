@@ -3,7 +3,8 @@ pipeline {
     options {
         skipStagesAfterUnstable()
     }
-    stage('Pre-Clean Up') {
+    stages {
+      stage('Pre-Clean Up') {
       agent any
       steps {
         sh 'docker stop my-ww1'
@@ -12,13 +13,14 @@ pipeline {
             }
         }  
     
-    stages {
+    
         stage('build') { 
             steps { 
                 
                 sh 'git clone https://github.com/welsh1lad/nginx-docker-test.git'
             }
         }
+
       stage('Docker Build') {
       agent any
       steps {
