@@ -42,7 +42,7 @@ pipeline {
       stage('Clean Up') {
       agent any
       steps {
-        sh 'docker stop my-ww1 | echo "Ignore Error if container is not running"'
+        sh 'docker stop my-www1 | echo "Ignore Error if container is not running"'
         sh 'docker rm my-www1 | echo "Ignore Error if contain is not found"'
         sh 'docker rmi nginx/my-www:latest | echo "Ignore Error if Image is not there"'   
         sh 'docker rmi -f var/lib/jenkins/workspace/nginx-www_master/nginx-docker-test'
