@@ -45,7 +45,7 @@ pipeline {
         sh 'docker stop my-www1 | echo "Ignore Error if container is not running"'
         sh 'docker rm my-www1 | echo "Ignore Error if contain is not found"'
         sh 'docker rmi nginx/my-www:latest | echo "Ignore Error if Image is not there"'   
-        sh 'rmi -f /var/lib/jenkins/workspace/nginx-www_master/nginx-docker-test'
+        sh 'rm -f /var/lib/jenkins/workspace/nginx-www_master/nginx-docker-test'
             }
         }  
    }
