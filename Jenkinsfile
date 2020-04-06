@@ -20,7 +20,7 @@ pipeline {
         
        stage('build') { 
         steps {  
-               sh 'git clone https://github.com/welsh1lad/nginx-docker-test.git'
+               sh 'git-force-clone https://github.com/welsh1lad/nginx-docker-test.git'
               }
         }
 
