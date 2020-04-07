@@ -18,11 +18,11 @@ pipeline {
            }
         }  
         
-       stage('build') { 
-        steps {  
-               sh 'git clone https://github.com/welsh1lad/nginx-docker-test.git'
-              }
-        }
+       //stage('build') { 
+       // steps {  
+       //        sh 'git clone https://github.com/welsh1lad/nginx-docker-test.git'
+       //       }
+       // }
 
       stage('Docker Build') {
       agent any
