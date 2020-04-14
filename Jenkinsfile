@@ -1,12 +1,12 @@
 pipeline { 
-   agent { label 'docker' }
+   agent any
    //  options {
    //     skipStagesAfterUnstable()
    // }
    stages {
         
       stage('Pre-Clean Up') {
-      agent { label 'docker' }
+      agent any
       steps {
           
         sh 'docker stop my-ww1 | echo "Ignore Error if container is not running"'
@@ -25,14 +25,14 @@ pipeline {
        // }
 
       stage('Docker Build') {
-      agent { label 'docker' }
+      agent any
       steps {
         sh 'docker build --label dev -t nginx/my-www:latest .'
           }
         }
        
       stage('Docker Run Build') {
-      agent { label 'docker' }
+      agent any
       steps {
         sh 'docker run -d --publish 8090:80 --detach --name my-www1 nginx/my-www:latest'
             }
@@ -45,7 +45,7 @@ pipeline {
       }
             
       stage('Clean Up') {
-      agent { label 'docker' }
+      agent any
       steps {
         sh 'docker stop my-www1 | echo "Ignore Error if container is not running"'
         sh 'docker rm my-www1 | echo "Ignore Error if contain is not found"'
