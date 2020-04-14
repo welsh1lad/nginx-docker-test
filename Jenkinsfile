@@ -1,12 +1,12 @@
 pipeline { 
-   agent { node { label 'docker' } } 
+   agent docker
    //  options {
    //     skipStagesAfterUnstable()
    // }
    stages {
         
       stage('Pre-Clean Up') {
-      agent { node { label 'docker' } } 
+      agent docker
       steps {
           
         sh 'docker stop my-ww1 | echo "Ignore Error if container is not running"'
@@ -25,14 +25,14 @@ pipeline {
        // }
 
       stage('Docker Build') {
-      agent { node { label 'docker' } } 
+      agent docker 
       steps {
         sh 'docker build --label dev -t nginx/my-www:latest .'
           }
         }
        
       stage('Docker Run Build') {
-      agent { node { label 'docker' } } 
+      agent docker 
       steps {
         sh 'docker run -d --publish 8090:80 --detach --name my-www1 nginx/my-www:latest'
             }
