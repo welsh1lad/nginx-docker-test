@@ -1,5 +1,5 @@
 pipeline { 
-   agent any
+   agent none
    //  options {
    //     skipStagesAfterUnstable()
    // }
@@ -18,21 +18,22 @@ pipeline {
     //       }
     //    }  
         
-       stage('Clone') { 
+       stage('Clone') {
+          agent { node { label 'docker' }}   
        steps {  
               sh 'git clone https://github.com/welsh1lad/nginx-docker-test.git'
               }
        }
 
       stage('Docker Build') {
-      agent docker
+      agent { node { label 'docker' }} 
       steps {
         sh 'docker build --label dev -t nginx/my-www:latest .'
           }
         }
        
       stage('Docker Run Build') {
-      agent docker
+      agent { node { label 'docker' }} 
       steps {
        
         sh 'docker run -d --publish 8090:80 --detach --name my-www1 nginx/my-www:latest'
