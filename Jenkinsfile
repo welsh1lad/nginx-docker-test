@@ -34,6 +34,7 @@ pipeline {
       stage('Docker Run Build') {
       agent any
       steps {
+        sh 'su jenkins' 
         sh 'docker run -d --publish 8090:80 --detach --name my-www1 nginx/my-www:latest'
             }
         }
