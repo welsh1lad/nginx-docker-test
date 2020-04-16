@@ -7,12 +7,12 @@ pipeline {
         
   
         
-       stage('Clone') {
+      // stage('Clone') {
            
-       steps {  
-              sh 'git clone https://github.com/welsh1lad/nginx-docker-test.git'
-              }
-       }
+      // steps {  
+      //        sh 'git clone https://github.com/welsh1lad/nginx-docker-test.git'
+      //        }
+      // }
 
      
        
