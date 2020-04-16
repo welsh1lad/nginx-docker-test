@@ -1,4 +1,4 @@
-
+pipeline {
        node { 
              label 'docker'
               stages {
@@ -15,3 +15,4 @@
              sh 'curl http://localhost:8090'
           }
        }
+}
