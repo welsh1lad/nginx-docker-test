@@ -16,13 +16,13 @@ pipeline {
 
      
        
-   //   stage('Docker Run Build') {
+      stage('Docker Run Build') {
      
-   //   steps {
+      steps {
        
-   //     sh 'docker run -d --publish 8090:80 --detach --name my-www1 nginx/my-www:latest'
-   //         }
-   //     }
+        sh 'docker run -d --publish 8090:80 --detach --name my-www1 nginx/my-www:latest'
+            }
+        }
         
       stage('Test Running Container') {
          steps{
