@@ -25,12 +25,12 @@ pipeline {
               }
        }
 
-      stage('Docker Build') {
-      agent { node { label 'docker' }} 
-      steps {
-        sh 'docker build --label dev -t nginx/my-www:latest .'
-          }
-        }
+      //stage('Docker Build') {
+      //agent { node { label 'docker' }} 
+      //steps {
+      //  sh 'docker build --label dev -t nginx/my-www:latest .'
+      //    }
+       // }
        
       stage('Docker Run Build') {
       agent { node { label 'docker' }} 
