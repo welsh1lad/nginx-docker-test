@@ -11,7 +11,7 @@ pipeline {
       
     }
 }  
-        
+}        
       // stage('Clone') {
            
       // steps {  
@@ -36,5 +36,5 @@ pipeline {
       //}
             
 
-   }
-}
+ //  }
+//}
