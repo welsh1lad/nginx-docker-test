@@ -1,4 +1,4 @@
-pipeline {
+
   node { 
        label 'docker'
              
@@ -44,4 +44,4 @@ pipeline {
               }
 }
 }
-}
+
