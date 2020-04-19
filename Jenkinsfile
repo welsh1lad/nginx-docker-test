@@ -12,8 +12,9 @@
      stage('Build image') {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
-
-        app = docker.build("nginx/my-www:latest")
+        sh 'echo "Now Build"'
+        sh 'hostname'
+       //app = docker.build("nginx/my-www:latest")
     }
       stage('Test image') {
         /* Ideally, we would run a test framework against our image.
