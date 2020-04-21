@@ -3,7 +3,7 @@
              label 'docker'
               
              checkout scm 
-             docker.image('jenkins-agent:latest').inside("-e COMPOSER_HOME=/tmp/jenkins-workspace") {
+             docker.image('jarvis:latest').inside("-e COMPOSER_HOME=/tmp/jenkins-workspace") {
                sh 'hostname'
                docker.build "my-www:latest" 
                docker.image('nginx/my-www:latest').withRun('-e --name my-www1 -d --publish 8090:80 --detach') { c ->
